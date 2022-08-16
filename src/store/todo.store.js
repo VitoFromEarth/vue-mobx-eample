@@ -64,8 +64,8 @@ class TodoStore {
         completed: true,
       })));
 
-    const response = await Promise.all(updatedTodosRequests);
-    this.todos = response.map(resp => new Todo(resp.data));
+    await Promise.all(updatedTodosRequests);
+    await this.getTodos();
     message.success("All todos completed!");
   }
 

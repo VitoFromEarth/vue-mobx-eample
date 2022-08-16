@@ -26,6 +26,7 @@ const todoDescriptioin = ref("");
 const store = todoStore();
 function addNewTodo() {
   store.value.addTodo(todoDescriptioin.value)
+  todoDescriptioin.value = "";
 }
 
 </script>
